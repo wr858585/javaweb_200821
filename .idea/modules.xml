@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_html_css/01_html_css.iml" filepath="$PROJECT_DIR$/01_html_css/01_html_css.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_javaScript/02_javaScript.iml" filepath="$PROJECT_DIR$/02_javaScript/02_javaScript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_jQuery/03_jQuery.iml" filepath="$PROJECT_DIR$/03_jQuery/03_jQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_jQuery/04_jQuery.iml" filepath="$PROJECT_DIR$/04_jQuery/04_jQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_web/05_web.iml" filepath="$PROJECT_DIR$/05_web/05_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_xml/05_xml.iml" filepath="$PROJECT_DIR$/05_xml/05_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_servlet/06_servlet.iml" filepath="$PROJECT_DIR$/06_servlet/06_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book_static/book_static.iml" filepath="$PROJECT_DIR$/book_static/book_static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb_200821.iml" filepath="$PROJECT_DIR$/javaweb_200821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc01/jdbc01.iml" filepath="$PROJECT_DIR$/jdbc/jdbc01/jdbc01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc02/jdbc02.iml" filepath="$PROJECT_DIR$/jdbc/jdbc02/jdbc02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myfirstweb/myfirstweb.iml" filepath="$PROJECT_DIR$/myfirstweb/myfirstweb.iml" />
+    </modules>
+  </component>
+</project>

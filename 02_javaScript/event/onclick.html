@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onclickFun() {
+            alert(" onclick 静态注册 ");
+        }
+
+        // onclick事件，动态注册
+        window.onload = function () {
+            // 先通过js代码获取标签对象
+            var btnObj = document.getElementById("btn01");
+            // alert( btnObj );
+            // 通过标签对象.事件名 = function(){}
+            btnObj.onclick = function () {
+                alert(" 动态注册 ： 讨厌 ");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="onclickFun()">点我</button>
+    <button id="btn01">点她</button>
+</body>
+</html>

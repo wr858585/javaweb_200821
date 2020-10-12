@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 定义:
+        // var 变量名 = new Object();	 //有一个对象实例
+        // 变量名.属性名 = 值;		// 添加一个属性
+        // 变量名.属性名 = 值;		// 添加一个属性
+        // 变量名.函数名 = function( 参数列表 ){ 函数体 }			// 添加一个函数
+        var obj = new Object();
+        obj.name = "华仔";
+        obj.age = 18 ;
+        obj.fun = function () {
+            alert("姓名：" + this.name + " , 年龄：" + this.age);
+        }
+        //
+        // 访问:
+        //     变量名.属性名/函数名( 参数 );
+        // alert( obj.age );//18
+        obj.fun();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

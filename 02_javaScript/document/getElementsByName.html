@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>标题</title>
+    <script type="text/javascript">
+        // 全选
+        function checkAll() {
+
+
+
+            // 通过name属性查找标签对象集合
+            // 这个返回的集合是集合，操作跟数组一样
+            // 集合中每个元素都是标签dom对象
+            // 集合中的元素顺序是他们在html页面中，从上到下的顺序。
+            var hobbies = document.getElementsByName("hobby");
+
+            // checked属性表示复选框的选中状态，true表示选中，false表示未选中
+            // checked属性可读，可写
+            for (var i = 0; i < hobbies.length; i++) {
+                hobbies[i].checked = true;
+            }
+        }
+        // 全不选
+        function checkNo() {
+            var hobbies = document.getElementsByName("hobby");
+            // checked属性表示复选框的选中状态，true表示选中，false表示未选中
+            // checked属性可读，可写
+            for (var i = 0; i < hobbies.length; i++) {
+                hobbies[i].checked = false;
+            }
+        }
+        // 反选
+        function checkReverse() {
+            // 获取全部的复选框标签对象
+            var hobbies = document.getElementsByName("hobby");
+            // 遍历状态原来的状态，设置为相反的值
+            for (var i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked) {
+                    hobbies[i].checked = false;
+                } else {
+                    hobbies[i].checked = true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox" name="hobby" value="java" checked="checked">Java
+    <input type="checkbox" name="hobby" value="js">JavaScript
+    <input type="checkbox" name="hobby" value="cpp">C++
+    <input type="checkbox" name="hobby" value="lua">LUA <br>
+
+
+    <button id="btnAll" onclick="checkAll()">全选</button>
+<!--    <button onclick="checkNo()">全不选</button>-->
+<!--    <button onclick="checkReverse()">反选</button>-->
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 需求：要求用户点击验证按钮之后。要获取输入框里的内容，然后验证其是否合法。
+        // 要求用户名必须由字母，数字下划线组成！并且长度是5到12位。
+        function checkUsername() {
+            // 1 获取用户名输入框里的内容
+            // 在想操作一个标签。要先获取到这个标签对象
+            var usernameObj = document.getElementById("username");
+            // 获取输入框里的用户名信息
+            var usernameText = usernameObj.value;
+
+            // 查找 span 标签对象
+            var usernameSpan = document.getElementById("usernameSpan");
+
+            // innerHTML属性表示起始标签和结束标签中的内容
+            // innerHTML 属性可读，可写
+
+
+
+            // 必须使用正则表达式
+            // 用户名必须由字母，数字下划线组成！并且长度是5到12位。
+            var usernamePatt = /^\w{5,12}$/;
+            // test()用于验证一个字符串，是否匹配正则表达式的规则，匹配就返回true，不匹配就返回false
+            if (usernamePatt.test(usernameText)) {
+                // alert("用户名合法");
+                usernameSpan.innerHTML = '<img src="right.png" width="18" height="18">';
+            } else {
+                // alert("用户不名合法");
+                // usernameSpan.innerHTML = "用户不名合法";
+                usernameSpan.innerHTML = '<img src="wrong.png" width="18" height="18">';
+            }
+        }
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="username" value="abc">
+    <span id="usernameSpan" style="color: red;">
+
+    </span>
+    <button onclick="checkUsername()">验证</button>
+</body>
+</html>

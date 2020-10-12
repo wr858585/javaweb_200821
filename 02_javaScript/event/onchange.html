@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function onchangeFun() {
+            alert("女神发生了改变");
+        }
+
+        window.onload = function () {
+            //1 通过js代码获取标签对象
+            var elementById = document.getElementById("sel01");
+            //2 通过标签对象.事件名 = function(){}
+            elementById.onchange = function () {
+                alert("男神发生了改变");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    请选择你心中的女神：
+    <select onchange="onchangeFun()">
+        <option>高圆圆</option>
+        <option>李加薪</option>
+        <option>溜一飞</option>
+        <option>李朦朦</option>
+    </select> <br>
+
+    请选择你心中的男神：
+    <select id="sel01">
+        <option>国哥</option>
+        <option>吴音祖</option>
+        <option>成龙</option>
+        <option>罗子祥</option>
+    </select> <br>
+
+</body>
+</html>

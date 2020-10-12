@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            // 可以设置和获取起始标签和结束标签中的内容
+            // 传递参数是设置。不传参数是获取
+           // alert( $("div:eq(1)").html() ) ; // 获取
+           // 设置
+           //  $("div:eq(1)").html( "<h1>标题</h1>" );
+
+            // 设置和获取起始标签和结束标签中的文本
+            // 不传参数是获取，传参数是设置
+            // alert( $("div:eq(1)").text() ); // 获取
+
+            // $("div:eq(1)").text("<h1>标题</h1>" );// 设置
+
+
+
+            $("button").click(function () {
+                // 不传参数是获取
+                var val = $(":text").val();
+                // alert(val);
+
+                // 传参数就设置
+                $(":text").val("设置内容");
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2 <span>1</span> </div>
+    <div>3</div>
+
+    <input type="text" id="username" value="abc">
+    <button>按钮</button>
+</body>
+</html>

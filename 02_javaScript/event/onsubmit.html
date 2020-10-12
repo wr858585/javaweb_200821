@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function onsubmitFun() {
+            alert("开始验证所有表单项");
+            alert("发现有其一不合法，阻止提交");
+            return false;
+        }
+
+        window.onload = function () {
+            // 通过js代码获取标签对象
+            var elementById = document.getElementById("form01");
+            // 通过标签对象.事件名 = function(){}
+            elementById.onsubmit = function () {
+                alert("动态 开始验证所有表单项");
+                alert("动态 发现有其一不合法，阻止提交");
+
+                // 动态注册，只需要在事件内return false就可以阻止提交
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 静态注册 onsubmit事件
+            return false;可以阻止元素的默认行为
+     -->
+    <form action="http://localhost:8080"
+          method="get" onsubmit="return onsubmitFun();">
+        <input type="submit" value="静态注册">
+    </form>
+
+    <form id="form01" action="http://localhost:8080" method="get">
+        <input type="submit" value="动态注册">
+    </form>
+
+</body>
+</html>

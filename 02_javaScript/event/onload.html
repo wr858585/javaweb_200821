@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 静态注册需要做的工作
+        function onloadFun() {
+            alert("onload静态注册做作了很多工作");
+        }
+
+        // onload事件动态注册
+        window.onload = function () {
+            alert("onload动态注册做作了很多工作");
+        }
+
+    </script>
+</head>
+<!-- onload事件是页面加载完成之后。事件，常用于做一些初始化操作 -->
+<!--
+    静态注册
+<body onload="onloadFun();">-->
+<body>
+</body>
+</html>

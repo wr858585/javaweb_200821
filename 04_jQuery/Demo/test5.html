@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //a.appendTo(b)	把a追加插入了b标签内，成为最后一个子元素
+            // $("<h1>标题1</h1>").appendTo("div");
+
+            //a.prependTo(b)	把a插到b的子元素前面，因为第一个子元素
+            // $("<h1>标题1</h1>").prependTo("div");
+
+
+            // insertAfter()			a.insertAfter(b);		把a插到b后面     	ba
+            // $("<h1>标题1</h1>").insertAfter( $("span:eq(0)") );
+            // insertBefore()			a.insertBefore(b);		把a插到b前面		ab
+            // $("<h1>标题1</h1>").insertBefore( $("div") );
+
+            // replaceWith()			a.replaceWith(b);		用b替换a
+            // $("span").replaceWith( $("<h1>标题1</h1>") );
+
+            // replaceAll()   		a.replaceAll(b);		用a替换全部的b
+            // $("<h1>标题1</h1>").replaceAll("span");
+
+
+            // remove()			a.remove();			删除a标签
+            // $("div").remove();
+            // empty()			a.empty();			清空a标签
+            $("div").empty();
+        });
+    </script>
+</head>
+<body>
+
+   <div> <span>1</span> <span>2</span> </div>
+
+
+
+</body>
+</html>

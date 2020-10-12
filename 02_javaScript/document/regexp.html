@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 表示验证字符串中是否包含字母e
+        // var patt = new RegExp("e");
+        // var patt = /e/;
+
+        // 表示验证字符串中是否包含。字母a或b或c或d或e
+        // var patt = /[abcde]/;
+
+        // 表示验证字符串中要包含小写字母
+        // var patt = /[a-z]/;
+
+        // 表示验证字符串中要包含数字
+        // var patt = /[0-9]/;
+
+        // 表示验证字符串中是否包含，字母或数字，或下划线
+        // var patt = /\w/;
+
+        // 表示验证字符串中至少包含一个a
+        // var patt = /a+/;
+
+        // 表示验证字符串中是否包含，任意个a（零个，1个，多个）
+        // var patt = /a*/;
+
+        // 表示验证字符串中是否 *包含*，零个或一个a
+        // var patt = /a?/;
+
+        // 表示验证字符串中，是否*包含* 至少3个连续的a
+        // var patt = /a{3}/;
+        // 表示验证字符串中，是否*包含*，至少3个连续的a，最多5个连续的a
+        // var patt = /a{3,5}/;
+
+        // 表示验证字符串中，是否*包含*，至少3个连续的a
+        // var patt = /a{3,}/;
+        // 表示字符串必须以a结尾
+        // var patt = /a$/;
+
+        // 表示字符串必须以a打头
+        // var patt = /^a/;
+
+        // 表示验证字符串中是否 *包含*,至少3个连续的（字母，数字，下划线），最多不能超过5个
+        // var patt = /\w{3,5}/;
+
+        // 表示验证字符串必须完全匹配正则表达式
+        var patt = /^\w{3,5}$/;
+
+        var str = "【wzg168]";
+
+        //超出的最多，什么时候不匹配
+        alert( patt.test(str) );
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

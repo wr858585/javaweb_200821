@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            /**
+             * attr()传一个参数是获取指定属性的值<br/>
+             * attr()传两个参数是设置属性的值<br/>
+             */
+            // alert( $(":checkbox:first").attr("value") );
+            // $(":checkbox:first").attr("name","ddd");
+
+
+            // alert( $(":checkbox:first").prop("checked") );
+
+            // prop() 设置和获取属性的值。
+            // 设置选中
+            // $(":checkbox:first").prop("checked",false);
+
+            $(":checkbox:first").attr("bbj","ccj");
+            alert( $(":checkbox:first").attr("bbj") );
+        });
+    </script>
+</head>
+<body>
+
+    多选：
+    <input  name="aaa" type="checkbox" value="checkbox1" checked="checked"/>checkbox1
+    <input name="bbb" type="checkbox" value="checkbox2" />checkbox2
+    <input name="ccc" type="checkbox" value="checkbox3" />checkbox3
+    <br/>
+
+
+
+</body>
+</html>

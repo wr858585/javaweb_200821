@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function f( a , b ) {
+            // arguments//它就是隐形参数。它的使用跟数组一样
+
+            // 参数的个数
+            alert( arguments.length );// 2
+            alert( arguments[0] ); // 12
+            alert( arguments[1] ); // abc
+            alert( arguments[2] ); // true
+            alert( a ); // 12
+            alert( b ); // abc
+
+            alert("f() 函数");
+        }
+
+        // f( 12,"abc",true );
+
+        // 需求，定义一个函数。用于计算所有传递进来的参数相加的和并返回(只计算number类型)
+        function sum(num1,num2) {
+            var result = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                if (typeof (arguments[i]) == "number") {
+                    result += arguments[i];
+                } else {
+
+                }
+            }
+            return result;
+        }
+
+        var sum1 = sum(100,100,"abc",true,100);
+        alert( sum1 );
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

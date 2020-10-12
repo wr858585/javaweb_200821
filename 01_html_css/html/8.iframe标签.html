@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>8.iframe标签.html</title>
+</head>
+<body>
+	我是一个完整的html页面
+    <br><br>
+    <br>
+    <!--
+        iframe开辟一个区域，显个一个单独的页面
+            src属性是显示的页面的路径，
+            可以是相对路径，也可以是绝对路径
+        iframe标签和a标签组合使用步骤
+        1 先在iframe标签中使用name属性设置一个名称
+        2 在a标签上使用target属性指定iframe标签name属性的值
+    -->
+    <iframe src="1.font标签.html" height="300" width="500" name="abc"></iframe>
+    <br>
+    <br>
+    <br>
+    <a href="2.特殊字符.html" target="abc">2.特殊字符.html</a> <br>
+    <a href="3.标题标签.html" target="abc">3.标题标签.html</a> <br>
+    <a href="5.img标签.html" target="abc">5.img标签.html</a> <br>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+
+        // 函数都是调用都会执行。
+
+        // 无参函数的定义
+        function fun() {
+            alert(" 无参函数fun()调用 ");
+        }
+
+        // 函数调用
+        // fun();
+
+        // 有参函数的定义
+        function fun2( a , b ) {
+            alert("fun2()有参函数调用  a=" + a + ",b=" + b);
+        }
+
+        // fun2(12,"abc");
+
+        function sum(num1,num2) {
+            return num1 + num2;
+        }
+
+        alert( sum(100,200) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

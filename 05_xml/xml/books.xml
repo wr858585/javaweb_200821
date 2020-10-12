@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    <?xml version="1.0" encoding="UTF-8" ?>
+    它是xml文件的声明。表示它是一个xml文件。
+    version属性 版本信息是1.0版本
+    encoding属性 是指当前文件的字符集为UTF-8
+
+    根元素是指唯一的没有父元素的顶级元素
+-->
+<books> <!-- books 表示多个图书 -->
+    <book sn="SN1234123412"> <!-- book表示一个图书信息 -->
+        <name>辟邪剑普</name> <!-- name表示书名信息-->
+        <author>林平之他爷</author> <!-- author表示作者信息 -->
+        <price>9.9</price> <!-- price标签表示图书价格 -->
+    </book>
+
+    <book sn="SN1234123411"> <!-- book表示一个图书信息 -->
+        <name>玉女心经</name> <!-- name表示书名信息-->
+        <author>
+            <![CDATA[
+                <<<<<<<<<<<<<<<<<<<<<<<<<<郭襄女侠
+            ]]>
+        </author> <!-- author表示作者信息 -->
+        <price>99</price> <!-- price标签表示图书价格 -->
+    </book>
+
+    <book sn="SN1234123413" name="从删库到跑路" author="国哥" price="9999" />
+</books>

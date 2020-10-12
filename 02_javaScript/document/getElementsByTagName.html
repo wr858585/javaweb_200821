@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 全选
+        function checkAll() {
+            // 通过标签名查找标签对象集合返回
+            // 集合中的元素都是标签的dom对象
+            // 集合中的dom对象是有序的。他们的顺序是他们标签在html页面中，从上到下的顺序。
+            var inputs = document.getElementsByTagName("input");
+
+            for (var i = 0 ; i < inputs.length; i++) {
+                inputs[i].checked = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox" value="java" checked="checked">Java
+    <input type="checkbox" value="js">JavaScript
+    <input type="checkbox" value="cpp">C++
+    <input type="checkbox" value="lua">LUA <br>
+
+    <button onclick="checkAll()">全选</button>
+
+</body>
+</html>

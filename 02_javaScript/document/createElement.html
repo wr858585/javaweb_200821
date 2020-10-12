@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            // 通过js代码创建div标签对象并显示在页面上  <div>国哥好帅！</div>
+            var htmlDivElement = document.createElement("div");// 内存中有一个div标签的dom对象  <div></div>
+
+            // 创建文本节点
+            var textNode = document.createTextNode("国哥好帅！");
+            htmlDivElement.appendChild(textNode); // <div>国哥好帅！</div>
+            htmlDivElement.onclick = function(){
+                alert("div onclick 事件");
+            }
+
+            // htmlDivElement.innerHTML = "国哥好帅！"; // <div>国哥好帅！</div>
+
+            // alert(document.body);
+            // 给body标签添加子元素
+            document.body.appendChild(htmlDivElement);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
