@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/05_web/05_web.iml" filepath="$PROJECT_DIR$/05_web/05_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/05_xml/05_xml.iml" filepath="$PROJECT_DIR$/05_xml/05_xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/06_servlet/06_servlet.iml" filepath="$PROJECT_DIR$/06_servlet/06_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book/book.iml" filepath="$PROJECT_DIR$/book/book.iml" />
       <module fileurl="file://$PROJECT_DIR$/book_static/book_static.iml" filepath="$PROJECT_DIR$/book_static/book_static.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb_200821.iml" filepath="$PROJECT_DIR$/javaweb_200821.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc01/jdbc01.iml" filepath="$PROJECT_DIR$/jdbc/jdbc01/jdbc01.iml" />
