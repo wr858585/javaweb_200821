@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>尚硅谷会员登录页面</title>
+	<script type="text/javascript" src="../../static/script/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+		//页面加载完成之后
+		$(function () {
+			$("#sub_btn").click(function () {
+				//验证用户名：必须由字母、数字、下划线组成，长度为5-12位
+				//获取用户输入的内容
+				var username = $(":text[name='username']").val();
+				var password = $(":password[name='password']").val();
+				//首先，如果用户名或密码未输入，提醒用户输入
+				if(username == ""){
+					$(".errorMsg").text("请输入用户名");
+					return false;
+				}
+				if(password == ""){
+					$(".errorMsg").text("请输入密码");
+					return false;
+				}
+				var uniPatt = /^\w{5,12}$/;
+				//通过正则表达式验证用户的输入是否合法
+				var flag1 = uniPatt.test(username);
+				var flag2 = uniPatt.test(password);
+				//如果test()方法返回true，则输入的合乎规范，不用处理；如果返回false，则输入不合法，要提示用户，且阻止表单提交
+				if(!flag1){
+					$(".errorMsg").text("输入的用户名不合法！");
+					return false;
+				}
+				if(!flag2){
+					$(".errorMsg").text("输入的密码不合法！");
+					return false;
+				}
+				//最后，需要重置errorMsg的显示信息
+				$(".errorMsg").text("");
+
+			})
+		})
+	</script>
+<link type="text/css" rel="stylesheet" href="../../static/css/style.css" >
+</head>
+<body>
+		<div id="login_header">
+			<img class="logo_img" alt="" src="../../static/img/logo.gif" >
+		</div>
+		
+			<div class="login_banner">
+			
+				<div id="l_content">
+					<span class="login_word">欢迎登录</span>
+				</div>
+				
+				<div id="content">
+					<div class="login_form">
+						<div class="login_box">
+							<div class="tit">
+								<h1>尚硅谷会员</h1>
+								<a href="regist.html">立即注册</a>
+							</div>
+							<div class="msg_cont">
+								<b></b>
+								<span class="errorMsg">请输入用户名和密码</span>
+							</div>
+							<div class="form">
+								<form action="login_success.html">
+									<label>用户名称：</label>
+									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" />
+									<br />
+									<br />
+									<label>用户密码：</label>
+									<input class="itxt" type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" />
+									<br />
+									<br />
+									<input type="submit" value="登录" id="sub_btn" />
+								</form>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<div id="bottom">
+			<span>
+				尚硅谷书城.Copyright &copy;2015
+			</span>
+		</div>
+</body>
+</html>
