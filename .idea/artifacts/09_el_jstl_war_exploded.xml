@@ -6,6 +6,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="09_el_jstl" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="09_el_jstl_commons-io-1.4" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="09_el_jstl/web/Web" />
     </root>
