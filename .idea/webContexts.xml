@@ -4,6 +4,9 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/book/web/index.html" value="file://$PROJECT_DIR$/book/web" />
+        <entry key="file://$PROJECT_DIR$/book/web/pages/user/login.html" value="file://$PROJECT_DIR$/book/web/pages/user" />
+        <entry key="file://$PROJECT_DIR$/book_exer/web/pages/user/login.html" value="file://$PROJECT_DIR$/book_exer/web/pages/user" />
+        <entry key="file://$PROJECT_DIR$/book_exer/web/pages/user/regist.html" value="file://$PROJECT_DIR$/book_exer/web/pages/user" />
       </map>
     </option>
   </component>
