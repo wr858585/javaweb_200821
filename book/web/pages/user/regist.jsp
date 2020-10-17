@@ -1,10 +1,15 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ include file="/pages/commons/header.jsp"%>
+<%@ include file="/pages/commons/footer.jsp"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>尚硅谷会员注册页面</title>
 	<base href="http://localhost:8080/book/">
-	<script type="text/javascript" src="static/script/jquery-1.7.2.js"></script>
+
 	<script type="text/javascript">
 		// 页面加载完成之后
 		$(function () {
@@ -74,7 +79,6 @@
 			});
 		});
 	</script>
-<link type="text/css" rel="stylesheet" href="static/css/style.css" >
 <style type="text/css">
 	.login_form{
 		height:420px;
@@ -137,10 +141,6 @@
 					</div>
 				</div>
 			</div>
-		<div id="bottom">
-			<span>
-				尚硅谷书城.Copyright &copy;2015
-			</span>
-		</div>
+
 </body>
 </html>

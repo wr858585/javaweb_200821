@@ -33,17 +33,17 @@ public class RegistServlet extends HttpServlet {
             //3.检查用户名是否被占用
             if(userService.existsUsername(username)){
                 System.out.println("用户名：[" + username +"]已被占用");
-                request.getRequestDispatcher("/pages/user/regist.html").forward(request,response);
+                request.getRequestDispatcher("/pages/user/regist.jsp").forward(request,response);
             } else{
                 //4.调用XxxService.registUser()来处理业务
                 userService.registUser(new User(null,username,password,email));
                 //5.跳转到注册成功页面
-                request.getRequestDispatcher("/pages/user/regist_success.html").forward(request,response);
+                request.getRequestDispatcher("/pages/user/regist_success.jsp").forward(request,response);
             }
         } else{
             System.out.println("验证码不正确");
             //跳回到regist.html页面
-            request.getRequestDispatcher("/pages/user/regist.html").forward(request,response);
+            request.getRequestDispatcher("/pages/user/regist.jsp").forward(request,response);
         }
     }
 }
