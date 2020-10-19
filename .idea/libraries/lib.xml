@@ -7,6 +7,13 @@
       <root url="jar://$PROJECT_DIR$/book_exer/web/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar!/" />
       <root url="jar://$PROJECT_DIR$/book_exer/web/WEB-INF/lib/org.hamcrest.core_1.3.0.jar!/" />
       <root url="file://$PROJECT_DIR$/book_exer/web/WEB-INF/lib" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/commons-beanutils-1.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/commons-dbutils-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/druid-1.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/junit_4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/org.hamcrest.core_1.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

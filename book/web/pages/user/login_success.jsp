@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>尚硅谷会员注册页面</title>
-	<base href="http://localhost:8080/book/">
 <style type="text/css">
 	h1 {
 		text-align: center;

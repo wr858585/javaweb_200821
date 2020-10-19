@@ -17,7 +17,7 @@ public class UserDaoImplTest {
 
     @Test
     public void queryUserByUsername() {
-        User admin1234 = userDao.queryUserByUsername("wzg168");
+        User admin1234 = userDao.queryUserByUsername("admin");
         if(admin1234 == null){
             System.out.println("用户名可用！");
         } else{

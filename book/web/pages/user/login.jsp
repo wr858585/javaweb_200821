@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>尚硅谷会员登录页面</title>
+    <base href="http://localhost:8080/book/">
     <script type="text/javascript">
 
         $(function () {
@@ -81,15 +82,24 @@
                 <div class="msg_cont">
                     <b></b>
                     <span class="errorMsg">
-                        <%=request.getAttribute("msg") == null? "请输入用户名和密码" : request.getAttribute("msg")%>
+                        <%--使用EL修改表单回显，代替表达式脚本，让错误信息显示--%>
+                        <%--
+                            <%=request.getAttribute("msg") == null? "请输入用户名和密码" : request.getAttribute("msg")%>
+                        --%>
+                        ${empty requestScope.msg ? "请输入用户名和密码" : requestScope.msg}
                     </span>
                 </div>
                 <div class="form">
-                    <form action="loginServlet" method="post">
+                    <form action="userServlet" method="post">
+                        <input type="hidden" name="action" value="login">
                         <label>用户名称：</label>
                         <input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1"
                                name="username"
+                               <%--用EL修改表单回显，代替表达式脚本，让用户名输入框中显示上次输入的用户名，提升用户体验--%>
+                           <%--
                                value="<%=request.getAttribute("username") == null? "" : request.getAttribute("username")%>"/>
+                           --%>
+                               ${empty requestScope.username}
                         <br/>
                         <br/>
                         <label>用户密码：</label>
