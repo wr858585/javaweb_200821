@@ -23,7 +23,7 @@
     //相当于把从request中获取到的信息存储到了域对象pageContext中[pageContext,request,session,application]
     //之后再用EL表达式轻松获取（EL表达式的作用就是输出域对象中存储的数据！）
     //格式为：${key} --> key为
-    pageContext.setAttribute("basepath",basePath);
+    pageContext.setAttribute("basePath",basePath);
 %>
 
 <base href="${basePath}">

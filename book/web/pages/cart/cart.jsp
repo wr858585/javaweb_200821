@@ -1,7 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ include file="/pages/commons/header.jsp"%>
-<%@ include file="/pages/commons/footer.jsp"%>
-<%@ include file="/pages/commons/login_success.jsp"%>
 
 
 <!DOCTYPE html>
@@ -9,16 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>购物车</title>
-<base href="http://localhost:8080/BookStore02/">
+	<%@ include file="/pages/commons/header.jsp"%>
+
 </head>
 <body>
 	
 	<div id="header">
 			<img class="logo_img" alt="" src="static/img/logo.gif" >
 			<span class="wel_word">购物车</span>
+		<%@ include file="/pages/commons/login_success_menu.jsp"%>
 
 	</div>
-	
+
 	<div id="main">
 	
 		<table>
@@ -63,7 +62,8 @@
 		</div>
 	
 	</div>
-	
+	<%@ include file="/pages/commons/footer.jsp"%>
+
 
 </body>
 </html>

@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="druid-1.1.9" />
+          <element id="library" level="project" name="lib" />
         </element>
       </element>
     </root>

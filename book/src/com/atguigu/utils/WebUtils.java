@@ -32,4 +32,13 @@ public class WebUtils {
 
         return bean;
     }
+
+    public static Integer parseInt(String intStr, Integer defaultValue) {
+        try {
+            return Integer.parseInt(intStr);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return defaultValue;
+    }
 }

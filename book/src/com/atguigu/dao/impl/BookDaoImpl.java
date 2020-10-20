@@ -2,6 +2,7 @@ package com.atguigu.dao.impl;
 
 import com.atguigu.pojo.Book;
 import com.atguigu.utils.BaseDao;
+import com.atguigu.utils.WebUtils;
 
 import java.util.List;
 
@@ -40,5 +41,18 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     public List<Book> queryBooks() {
         String sql = "select `name`,`author`,`price`,`sales`,`stock`,`img_path` as imgPath,`id` from t_book";
         return queryList(Book.class,sql);
+    }
+
+    @Override
+    public Integer queryForPageCount() {
+        String sql = "select count(*) from t_book";
+        Object count = queryForSingleValue(sql);
+        return WebUtils.parseInt(count.toString(),0);
+    }
+
+    @Override
+    public List<Book> queryforPageItems(Integer begin, Integer pageSize) {
+        String sql = "select `name`,`author`,`price`,`sales`,`stock`,`img_path` imgPath,`id` from t_book limit ?,?";
+        return queryList(Book.class,sql,begin,pageSize);
     }
 }

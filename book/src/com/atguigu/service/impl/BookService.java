@@ -1,6 +1,7 @@
 package com.atguigu.service.impl;
 
 import com.atguigu.pojo.Book;
+import com.atguigu.pojo.Page;
 
 import java.util.List;
 
@@ -20,4 +21,5 @@ public interface BookService {
 
     public List<Book> queryBooks();
 
+    Page page(Integer pageNo, Integer pageSize);
 }

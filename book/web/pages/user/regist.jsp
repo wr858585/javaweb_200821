@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ include file="/pages/commons/header.jsp"%>
-<%@ include file="/pages/commons/footer.jsp"%>
 
 
 <!DOCTYPE html>
@@ -8,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>尚硅谷会员注册页面</title>
-	<base href="http://localhost:8080/book/">
+	<%@ include file="/pages/commons/header.jsp"%>
+
 
 	<script type="text/javascript">
 		// 页面加载完成之后
@@ -142,6 +141,7 @@
 					</div>
 				</div>
 			</div>
+		<%@ include file="/pages/commons/footer.jsp"%>
 
 </body>
 </html>
