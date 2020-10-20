@@ -18,6 +18,16 @@ public class BookDaoTest {
     BookDao bookDao = new BookDaoImpl();
 
     @Test
+    public void queryForPageCount(){
+        System.out.println(bookDao.queryForPageCount());
+    }
+
+    @Test
+    public void queryForPageItems(){
+        bookDao.queryforPageItems(5,4).forEach(System.out::println);
+    }
+
+    @Test
     public void saveBook() {
         bookDao.saveBook(new Book(null,"从删库到跑路","国哥",new BigDecimal("9.9"),1000,1000,null));
     }

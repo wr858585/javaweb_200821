@@ -1,7 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ include file="/pages/commons/header.jsp"%>
-<%@ include file="/pages/commons/footer.jsp"%>
-<%@ include file="/pages/commons/login_success.jsp"%>
 
 
 <!DOCTYPE html>
@@ -9,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>我的订单</title>
-<style type="text/css">
+	<%@ include file="/pages/commons/header.jsp"%>
+
+	<style type="text/css">
 	h1 {
 		text-align: center;
 		margin-top: 200px;
@@ -21,6 +20,7 @@
 	<div id="header">
 			<img class="logo_img" alt="" src="../../static/img/logo.gif" >
 			<span class="wel_word">我的订单</span>
+		<%@ include file="/pages/commons/login_success_menu.jsp"%>
 
 	</div>
 	
@@ -57,7 +57,8 @@
 		
 	
 	</div>
-	
+	<%@ include file="/pages/commons/footer.jsp"%>
+
 
 </body>
 </html>

@@ -15,7 +15,16 @@ import java.lang.reflect.Method;
  */
 //@WebServlet(name = "BaseServlet")
 public abstract class BaseServlet extends HttpServlet {
+
+    //提供好doGet()方法，因为大多数请求其实都是method="get"
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        doPost(request,response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        //解决post请求中的中文乱码
+        request.setCharacterEncoding("UTF-8");
 
         String action = request.getParameter("action");
 

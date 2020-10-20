@@ -39,13 +39,13 @@ public abstract class BaseDao {
      * @param args：sql占位符对应的参数值
      * @return
      */
-    protected Object queryList(String sql, Object args){
+    protected Object queryForSingleValue(String sql, Object ...args){
 
         Connection conn = JDBCUtils.getConnection();
         System.out.println();
 
         try {
-            return queryRunner.query(sql, new ScalarHandler(), args);
+            return queryRunner.query(conn, sql, new ScalarHandler(), args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             throw new RuntimeException("当前执行sql语句[" + sql +"]，参数值是：" + Arrays.asList(args) + "，发生了错误",throwables);

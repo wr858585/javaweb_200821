@@ -1,14 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ include file="/pages/commons/header.jsp"%>
-<%@ include file="/pages/commons/footer.jsp"%>
-
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>尚硅谷会员登录页面</title>
-    <base href="http://localhost:8080/book/">
+    <%@ include file="/pages/commons/header.jsp"%>
     <script type="text/javascript">
 
         $(function () {
@@ -115,6 +112,8 @@
         </div>
     </div>
 </div>
+
+<%@ include file="/pages/commons/footer.jsp"%>
 
 </body>
 </html>

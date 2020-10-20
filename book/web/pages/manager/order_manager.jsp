@@ -1,7 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ include file="/pages/commons/header.jsp"%>
-<%@ include file="/pages/commons/footer.jsp"%>
-<%@ include file="/pages/commons/manager.jsp"%>
 
 
 <!DOCTYPE html>
@@ -9,12 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>订单管理</title>
+	<%@ include file="/pages/commons/header.jsp"%>
+
 </head>
 <body>
 	
 	<div id="header">
 			<img class="logo_img" alt="" src="../../static/img/logo.gif" >
 			<span class="wel_word">订单管理系统</span>
+		<%@ include file="/pages/commons/manager_menu.jsp"%>
 
 	</div>
 	
@@ -49,7 +49,8 @@
 			</tr>		
 		</table>
 	</div>
-	
+	<%@ include file="/pages/commons/footer.jsp"%>
+
 
 </body>
 </html>

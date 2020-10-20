@@ -42,7 +42,7 @@ public class UserServlet extends BaseServlet {
             request.getRequestDispatcher("/pages/user/login.jsp").forward(request,response);
         } else{
             System.out.println("登录成功");
-            request.getRequestDispatcher("/pages/user/login_success.jsp").forward(request,response);
+            request.getRequestDispatcher("/pages/user/login_success_menu.jsp").forward(request,response);
         }
     }
 
