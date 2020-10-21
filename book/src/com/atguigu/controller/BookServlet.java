@@ -106,8 +106,8 @@ public class BookServlet extends BaseServlet {
         //3.将page对象保存为request域对象
         request.setAttribute("page",page);
 
-        //4.重定向到list页面
-        request.getRequestDispatcher("/pages/manager/book_manager.jsp");
+        //4.请求转发到list页面
+        request.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(request,response);
 
     }
 

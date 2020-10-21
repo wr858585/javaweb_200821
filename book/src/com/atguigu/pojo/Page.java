@@ -20,6 +20,16 @@ public class Page<T> {
     private Integer pageTotal;
     //当前页的数据items
     private List<T> items;
+    //表示分页条中的请求地址
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     @Override
     public String toString() {
@@ -68,7 +78,19 @@ public class Page<T> {
         return pageNo;
     }
 
+    /**
+    该方法一定要在pageTotal有值后调用
+     */
     public void setPageNo(Integer pageNo) {
+        //如果小于1，则显示第1页
+        if(pageNo < 1){
+            pageNo = 1;
+        }
+        //如果大于总页码，则显示最后一页
+        if(pageNo > pageTotal){
+            pageNo = pageTotal;
+        }
+
         this.pageNo = pageNo;
     }
 
