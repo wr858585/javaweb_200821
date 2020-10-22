@@ -22,4 +22,7 @@ public interface BookService {
     public List<Book> queryBooks();
 
     Page page(Integer pageNo, Integer pageSize);
+
+    Page pageByPrice(Integer pageNo, Integer pageSize, Integer min, Integer max);
+
 }

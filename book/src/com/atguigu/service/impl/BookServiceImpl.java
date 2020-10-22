@@ -66,10 +66,42 @@ public class BookServiceImpl implements BookService{
         //begin可由公式：begin = (pageNo - 1) * pageSize求得
         Integer begin = (page.getPageNo() - 1) * page.getPageSize();
         //求当前页面的数据items
-        List<Book> items = bookDao.queryforPageItems(begin, page.getPageSize());
+        List<Book> items = bookDao.queryForPageItems(begin, page.getPageSize());
         //最后设置items属性
         page.setItems(items);
 
         return page;
+    }
+
+    @Override
+    //根据价格区间做分页
+    public Page pageByPrice(Integer pageNo, Integer pageSize, Integer min, Integer max) {
+
+        Page<Book> page = new Page<>();
+
+        //1.把传入的pageNo设置好
+        page.setPageNo(pageNo);
+
+        //2.把传入的pageSize设置好
+        page.setPageSize(pageSize);
+
+        //3.还剩下pageCount--<有queryForPageCountByPrice解决
+        Integer pageCount = bookDao.queryForPageCountByPrice(min, max);
+        page.setPageCount(pageCount);
+
+        //4.还剩下pageTotal
+        Integer pageTotal = pageCount / pageSize;
+        if(pageCount % pageSize != 0){
+            pageTotal++;
+        }
+        page.setPageTotal(pageTotal);
+
+        //5.最后一个items--<有queryForItemsByPrice解决
+        Integer begin = (pageNo - 1) * pageSize;
+        List<Book> books = bookDao.queryForPageItemsByPrice(begin, pageSize, min, max);
+        page.setItems(books);
+
+        return page;
+
     }
 }

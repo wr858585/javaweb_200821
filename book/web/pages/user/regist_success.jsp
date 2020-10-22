@@ -29,7 +29,7 @@
 
 		<div id="main">
 
-			<h1>注册成功! <a href="../../index1.jsp">转到主页</a></h1>
+			<h1>注册成功! <a href="../../index.jsp">转到主页</a></h1>
 
 		</div>
 		<%@ include file="/pages/commons/footer.jsp"%>
