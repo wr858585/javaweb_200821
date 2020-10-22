@@ -24,7 +24,7 @@ public class BookDaoTest {
 
     @Test
     public void queryForPageItems(){
-        bookDao.queryforPageItems(5,4).forEach(System.out::println);
+        bookDao.queryForPageItems(5,4).forEach(System.out::println);
     }
 
     @Test
@@ -50,5 +50,15 @@ public class BookDaoTest {
     @Test
     public void queryBooks() {
         bookDao.queryBooks().forEach(System.out::println);
+    }
+
+    @Test
+    public void queryForPageCountByPrice(){
+        System.out.println(bookDao.queryForPageCountByPrice(10, 40));
+    }
+
+    @Test
+    public void queryForPageItemsByPrice(){
+        bookDao.queryForPageItemsByPrice(4,4,10,50).forEach(System.out::println);
     }
 }
