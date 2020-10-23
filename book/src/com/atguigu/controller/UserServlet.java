@@ -3,6 +3,7 @@ package com.atguigu.controller;
 import com.atguigu.pojo.User;
 import com.atguigu.service.impl.UserService;
 import com.atguigu.service.impl.UserServiceImpl;
+import com.google.code.kaptcha.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,22 +43,38 @@ public class UserServlet extends BaseServlet {
             request.getRequestDispatcher("/pages/user/login.jsp").forward(request,response);
         } else{
             System.out.println("登录成功");
-            request.getRequestDispatcher("/pages/user/login_success_menu.jsp").forward(request,response);
+            //保存用户登录之后的信息
+            request.getSession().setAttribute("user",loginUser);
+            //跳转到登录成功页面
+            request.getRequestDispatcher("/pages/user/login_success.jsp").forward(request,response);
         }
     }
 
     protected void regist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //1.获取请求的参数（封装为User对象）
+        //1a.获取请求的参数（封装为User对象）
         String username =  request.getParameter("username");
         String password =  request.getParameter("password");
         String email =  request.getParameter("email");
         String code =  request.getParameter("code");
 
+        //1b.还要获取session中的验证码
+        String token = (String)request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
+        //1c.再删除session域中的验证码
+        request.getSession().removeAttribute(Constants.KAPTCHA_SESSION_KEY);
+
         //2.检查验证码是否正确
-        if("abcde".equalsIgnoreCase(code)){
+        if(token != null && token.equalsIgnoreCase(code)){
             //3.检查用户名是否被占用
             if(userService.existsUsername(username)){
+                //用户名不可用
                 System.out.println("用户名：[" + username +"]已被占用");
+
+                //回显
+                request.setAttribute("msg","用户名不可用");
+                request.setAttribute("username",username);
+                request.setAttribute("email",email);
+
+                //跳回regist.jsp页面
                 request.getRequestDispatcher("/pages/user/regist.jsp").forward(request,response);
             } else{
                 //4.调用XxxService.registUser()来处理业务
@@ -66,10 +83,27 @@ public class UserServlet extends BaseServlet {
                 request.getRequestDispatcher("/pages/user/regist_success.jsp").forward(request,response);
             }
         } else{
-            System.out.println("验证码不正确");
+            System.out.println("验证码[" + code + "不正确");
+
+            //回显
+            request.setAttribute("msg","验证码不正确");
+            request.setAttribute("username",username);
+            request.setAttribute("email",email);
+
             //跳回到regist.html页面
             request.getRequestDispatcher("/pages/user/regist.jsp").forward(request,response);
         }
+    }
+
+    protected void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+        //1.销毁session | 删除session中用户的信息 --> session.invalidate()方法
+        //让当前session销毁，其里面的数据也销毁
+        request.getSession().invalidate();
+
+        //2.重定向到首页 | 登录页面
+        response.sendRedirect(request.getContextPath());
+
     }
 
     //由于抽取了BaseServlet,所以子类（UserServlet,BookServlet)不用重写doPost方法，直接继承后调用父类的doPost方法即可

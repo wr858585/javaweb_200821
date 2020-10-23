@@ -60,7 +60,7 @@ public class BookServiceImpl implements BookService{
         //设置总页码
         page.setPageTotal(pageTotal);
 
-        //设置当前页码
+        //设置当前页码[pageNo一定要在pageTotal设置好之后才能设置，见setPageNo()方法的文档注释！]
         page.setPageNo(pageNo);
 
         //begin可由公式：begin = (pageNo - 1) * pageSize求得
@@ -79,8 +79,6 @@ public class BookServiceImpl implements BookService{
 
         Page<Book> page = new Page<>();
 
-        //1.把传入的pageNo设置好
-        page.setPageNo(pageNo);
 
         //2.把传入的pageSize设置好
         page.setPageSize(pageSize);
@@ -95,6 +93,9 @@ public class BookServiceImpl implements BookService{
             pageTotal++;
         }
         page.setPageTotal(pageTotal);
+
+        //1.把传入的pageNo设置好[注意：该方法一定要在pageTotal设置好之后才能使用as per file comments!所以要下移]
+        page.setPageNo(pageNo);
 
         //5.最后一个items--<有queryForItemsByPrice解决
         Integer begin = (pageNo - 1) * pageSize;
