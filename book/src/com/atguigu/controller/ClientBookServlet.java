@@ -30,7 +30,7 @@ public class ClientBookServlet extends BaseServlet {
 
         //2.调用bookService.page()方法处理分页逻辑
         Page page = bookService.page(pageNo, pageSize);
-        page.setUrl("manager/bookServlet?action=page");
+        page.setUrl("client/bookServlet?action=page");
 
         //3.将page对象保存为request域对象
         request.setAttribute("page",page);

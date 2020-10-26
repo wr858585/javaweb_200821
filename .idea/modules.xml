@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/book/book.iml" filepath="$PROJECT_DIR$/book/book.iml" />
       <module fileurl="file://$PROJECT_DIR$/book_exer/book_exer.iml" filepath="$PROJECT_DIR$/book_exer/book_exer.iml" />
       <module fileurl="file://$PROJECT_DIR$/book_static/book_static.iml" filepath="$PROJECT_DIR$/book_static/book_static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design/design.iml" filepath="$PROJECT_DIR$/design/design.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb_200821.iml" filepath="$PROJECT_DIR$/javaweb_200821.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc01/jdbc01.iml" filepath="$PROJECT_DIR$/jdbc/jdbc01/jdbc01.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc02/jdbc02.iml" filepath="$PROJECT_DIR$/jdbc/jdbc02/jdbc02.iml" />
