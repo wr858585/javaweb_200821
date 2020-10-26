@@ -50,9 +50,63 @@ public class CartServlet extends BaseServlet {
         //5.调用cart.addItem()，把cartItem添加到方法调用者cart对象中
         cart1.addItem(cartItem);
         System.out.println(cart1);
+        //5.5要把最后一本加入的书放入域对象中，才能在回显时使用
+        request.getSession().setAttribute("lastAddedBookName",cartItem.getName());
 
         //6.跳回商品列表页面 --> 重定向
         response.sendRedirect(request.getHeader("Referer"));
+
+    }
+
+    protected void deleteItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+        //1.获取请求的参数
+        Integer id = WebUtils.parseInt(request.getParameter("id"),0);
+
+        //2.获取cart对象
+        Cart cart = (Cart)request.getSession().getAttribute("cart");
+
+        //3.判断cart是否是空的；如果这里不判断的话，如果购物车为空，则空指针异常！
+        if(cart != null){
+            //3.1调用cart.deleteItem(id)方法
+            cart.deleteItem(id);
+        }
+
+        //4.跳转回购物车页面
+        response.sendRedirect(request.getHeader("referer"));
+
+    }
+
+    protected void clear(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+        //1.获取请求的参数
+        //2.获取cart对象
+        Cart cart = (Cart)request.getSession().getAttribute("cart");
+
+        //3.调用cart.clear方法清空购物车
+        cart.clear();
+
+        //4.重定向回购物车首页
+        response.sendRedirect(request.getHeader("Referer"));
+
+    }
+
+    protected void updateCount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+        //1.获取请求的参数：id，count
+        Integer id = WebUtils.parseInt(request.getParameter("id"),0);
+        Integer count = WebUtils.parseInt(request.getParameter("count"),1);
+
+        //2.获取session中的cart对象
+        Cart cart = (Cart)request.getSession().getAttribute("cart");
+
+        //3.判断cart是否是空的；如果这里不判断的话，如果购物车为空，则空指针异常！
+        if(cart != null){
+            cart.updateCount(id,count);
+        }
+
+        //4.重定向到购物车页面
+        response.sendRedirect(request.getHeader("referer"));
 
     }
 
