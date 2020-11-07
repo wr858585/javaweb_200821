@@ -1,10 +1,13 @@
 package com.atguigu.service.impl;
 
+import com.atguigu.dao.*;
 import com.atguigu.dao.impl.*;
 import com.atguigu.pojo.*;
+import com.atguigu.service.OrderService;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author oono
@@ -16,6 +19,12 @@ public class OrderServiceImpl implements OrderService {
     OrderItemDao orderItemDao = new OrderItemDaoImpl();
     BookDao bookDao = new BookDaoImpl();
 
+    /**
+     * 创建一个订单
+     * @param userId
+     * @param cart
+     * @return：返回订单号orderId
+     */
     @Override
     public String createOrder(Integer userId, Cart cart) {
         String orderId = System.currentTimeMillis() + "" + userId;
@@ -38,5 +47,31 @@ public class OrderServiceImpl implements OrderService {
         //3.清空购物车
         cart.clear();
         return orderId;
+    }
+
+    @Override
+    public List<Order> myOrders(Integer userId) {
+        List<Order> orders = orderDao.queryOrdersByUserId(userId);
+        return orders;
+    }
+
+    @Override
+    public void receiveOrder(String orderId) {
+        orderDao.changeOrderStatus(orderId, 2);
+    }
+
+    @Override
+    public List<OrderItem> orderDetails(String orderId) {
+        return orderItemDao.queryOrderItemsOrderId(orderId);
+    }
+
+    @Override
+    public List<Order> allOrders() {
+        return orderDao.queryAllOrders();
+    }
+
+    @Override
+    public void sendOrder(String orderId){
+        orderDao.changeOrderStatus(orderId,1);
     }
 }

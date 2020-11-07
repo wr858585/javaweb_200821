@@ -3,13 +3,12 @@ package com.atguigu.controller;
 import com.atguigu.pojo.Book;
 import com.atguigu.pojo.Cart;
 import com.atguigu.pojo.CartItem;
-import com.atguigu.service.impl.BookService;
+import com.atguigu.service.BookService;
 import com.atguigu.service.impl.BookServiceImpl;
 import com.atguigu.utils.WebUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

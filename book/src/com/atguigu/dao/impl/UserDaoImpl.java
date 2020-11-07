@@ -1,5 +1,6 @@
 package com.atguigu.dao.impl;
 
+import com.atguigu.dao.UserDao;
 import com.atguigu.pojo.User;
 import com.atguigu.utils.BaseDao;
 
@@ -7,7 +8,7 @@ import com.atguigu.utils.BaseDao;
  * @author oono
  * @date 2020 10 13
  */
-public class UserDaoImpl extends BaseDao implements UserDao{
+public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public User queryUserByUsername(String username) {

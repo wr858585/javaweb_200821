@@ -1,14 +1,15 @@
 package com.atguigu.service.impl;
 
-import com.atguigu.dao.impl.UserDao;
+import com.atguigu.dao.UserDao;
 import com.atguigu.dao.impl.UserDaoImpl;
 import com.atguigu.pojo.User;
+import com.atguigu.service.UserService;
 
 /**
  * @author oono
  * @date 2020 10 13
  */
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private UserDao userDao = new UserDaoImpl();
 
