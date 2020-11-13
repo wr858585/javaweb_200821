@@ -3,6 +3,7 @@ package com.atguigu.filter;
 import com.atguigu.pojo.User;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -14,7 +15,11 @@ import java.io.IOException;
  * @date 2020 11 06
  */
 
-
+/**
+ * "/pages/manager/*"表示拦截访问所有在/pages/manager/目录下的所有页面
+ * "/manager/bookServlet"表示拦截/manager/目录下的bookServlet程序
+ */
+@WebFilter(value = {"/pages/manager/*","/manager/bookServlet"})
 public class ManagerFilter implements Filter {
 
     @Override
