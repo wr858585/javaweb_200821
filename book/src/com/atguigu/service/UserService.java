@@ -1,4 +1,4 @@
-package com.atguigu.service.impl;
+package com.atguigu.service;
 
 import com.atguigu.pojo.User;
 

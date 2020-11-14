@@ -1,13 +1,11 @@
 package com.atguigu.test;
 
-import com.atguigu.dao.impl.BookDao;
+import com.atguigu.dao.BookDao;
 import com.atguigu.dao.impl.BookDaoImpl;
 import com.atguigu.pojo.Book;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-
-import static org.junit.Assert.*;
 
 /**
  * @author oono

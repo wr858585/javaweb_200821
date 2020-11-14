@@ -2,13 +2,12 @@ package com.atguigu.controller;
 
 import com.atguigu.pojo.Book;
 import com.atguigu.pojo.Page;
-import com.atguigu.service.impl.BookService;
+import com.atguigu.service.BookService;
 import com.atguigu.service.impl.BookServiceImpl;
 import com.atguigu.utils.WebUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -18,6 +17,9 @@ import java.io.IOException;
  * @date 2020 10 21
  */
 @WebServlet(value = "/client/bookServlet")
+//之所以把bookServlet分成两个写，一个放在client路径下，一个再manager路径下，是因为之后filter过滤
+//client路径下的这个servlet响应程序的功能，分页，是不用用户登录就必须要执行的操作，filter不过滤client路径下的请求，可以访问资源
+//而manager路径下的servlet响应程序的功能，必须要登录才能操作，所以用filter过滤掉所有未登录而直接请求访问managerServlet资源的请求
 public class ClientBookServlet extends BaseServlet {
 
     BookService bookService = new BookServiceImpl();

@@ -1,9 +1,10 @@
 package com.atguigu.service.impl;
 
-import com.atguigu.dao.impl.BookDao;
+import com.atguigu.dao.BookDao;
 import com.atguigu.dao.impl.BookDaoImpl;
 import com.atguigu.pojo.Book;
 import com.atguigu.pojo.Page;
+import com.atguigu.service.BookService;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @author oono
  * @date 2020 10 19
  */
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
 
     BookDao bookDao = new BookDaoImpl();
 

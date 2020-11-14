@@ -1,17 +1,15 @@
 package com.atguigu.controller;
 
 import com.atguigu.pojo.User;
-import com.atguigu.service.impl.UserService;
+import com.atguigu.service.UserService;
 import com.atguigu.service.impl.UserServiceImpl;
 import com.google.code.kaptcha.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Method;
 
 /**
  * @author oono
@@ -44,6 +42,7 @@ public class UserServlet extends BaseServlet {
         } else{
             System.out.println("登录成功");
             //保存用户登录之后的信息
+            //这一步非常重要，是很多其他操作得以进行的基础。因为很多都要获取request域中保存的这个数据：user
             request.getSession().setAttribute("user",loginUser);
             //跳转到登录成功页面
             request.getRequestDispatcher("/pages/user/login_success.jsp").forward(request,response);

@@ -1,13 +1,9 @@
 package com.atguigu.test;
 
-import com.atguigu.dao.impl.UserDao;
-import com.atguigu.dao.impl.UserDaoImpl;
 import com.atguigu.pojo.User;
-import com.atguigu.service.impl.UserService;
+import com.atguigu.service.UserService;
 import com.atguigu.service.impl.UserServiceImpl;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author oono

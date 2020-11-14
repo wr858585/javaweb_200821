@@ -9,8 +9,12 @@ import java.lang.reflect.Proxy;
  */
 public class JdkProxyFactory {
 
-//    static class InvacationHandler
-
+    /**
+     * 根据目标对象，创建出相应的代理实例对象
+     * @param target
+     * @param invocationHandler
+     * @return
+     */
     public static Object createProxy(Object target, InvocationHandler invocationHandler){
         return Proxy.newProxyInstance(target.getClass().getClassLoader()
         , target.getClass().getInterfaces()

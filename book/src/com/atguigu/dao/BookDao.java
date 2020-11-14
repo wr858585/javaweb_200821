@@ -1,4 +1,4 @@
-package com.atguigu.dao.impl;
+package com.atguigu.dao;
 
 import com.atguigu.pojo.Book;
 
