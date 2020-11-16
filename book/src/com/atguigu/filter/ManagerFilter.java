@@ -36,7 +36,12 @@ public class ManagerFilter implements Filter {
         if(user == null){
             httpServletRequest.getRequestDispatcher("/pages/user/login.jsp").forward(servletRequest,servletResponse);
         } else{
-            filterChain.doFilter(servletRequest,servletResponse);
+            if("admin".equals(user.getUsername())) {
+                filterChain.doFilter(servletRequest, servletResponse);
+            } else {
+                HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
+                httpServletResponse.sendRedirect("/");
+            }
         }
     }
 
